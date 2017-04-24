@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html,fn-in,imgdir:Images/ --> 
+<meta name="src" content="testing_Latex2Html.tex"> 
+<meta name="date" content="2017-04-24 18:36:00"> 
+<link rel="stylesheet" type="text/css" href="testing_Latex2Html.css"> 
+</head><body 
+>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Batch normalization backpropagation</h3>
+<!--l. 188--><p class="noindent" >The batch-norm layer forward pass is given by
+<!--l. 190--><p class="indent" >
+<table 
+class="align">
+                                     <tr><td 
+class="align-odd"></td>                                     <td 
+class="align-even">out<sub><span 
+class="cmmi-8">a</span></sub><sup><span 
+class="cmmi-8">i</span></sup> = <span 
+class="cmmi-12">&#x03B3;</span><sub>
+<span 
+class="cmmi-8">a</span></sub><img 
+src="Images/testing_Latex2Html0x.png" alt="&#x02C6;x"  class="circ" ><sub><span 
+class="cmmi-8">a</span></sub><sup><span 
+class="cmmi-8">i</span></sup> + <span 
+class="cmmi-12">&#x03B2;</span><sub>
+<span 
+class="cmmi-8">a</span></sub><span 
+class="cmmi-12">,</span></td>                                                                          <td 
+class="align-label"><a 
+ id="x1-1001r1"></a>(1.1)                                     </td></tr></table>
+where <span 
+class="cmmi-12">a,b </span>= 1<span 
+class="cmmi-12">,..,D </span>are the feature indices, <span 
+class="cmmi-12">i,j,k </span>= 1<span 
+class="cmmi-12">,...,N </span>are the batch samples, and
+<table 
+class="align">
+               <tr><td 
+class="align-odd"></td>               <td 
+class="align-even"><img 
+src="Images/testing_Latex2Html1x.png" alt="&#x02C6;x"  class="circ" ><sub><span 
+class="cmmi-8">a</span></sub><sup><span 
+class="cmmi-8">i</span></sup> = <img 
+src="Images/testing_Latex2Html2x.png" alt="xi - &#x03BC;
+--a----a
+   &#x03C3;a"  class="frac" align="middle"><span 
+class="cmmi-12">,   &#x03BC;</span><sub><span 
+class="cmmi-8">a</span></sub> = <img 
+src="Images/testing_Latex2Html3x.png" alt="1
+---
+N"  class="frac" align="middle"><span 
+class="cmex-10x-x-120">&#x2211;</span>
+    <sub><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmmi-8">N</span></sup><span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmmi-8">a</span></sub><sup><span 
+class="cmmi-8">i</span></sup><span 
+class="cmmi-12">,   &#x03C3;</span><sub>
+<span 
+class="cmmi-8">a</span></sub> = <img 
+src="Images/testing_Latex2Html4x.png" alt="(                 )
+   1 &#x2211;N
+  ---   (xia - &#x03BC;a)2
+  N  i=1"  class="left" align="middle"><sup><span 
+class="cmr-8">1</span><span 
+class="cmmi-8">&#x2215;</span><span 
+class="cmr-8">2</span></sup><span 
+class="cmmi-12">.</span></td>                              <td 
+class="align-label"><a 
+ id="x1-1002r2"></a>(1.2)               </td></tr></table>
+Backpropagating <span 
+class="cmmi-12">D</span><sub><span 
+class="cmmi-8">a</span></sub><sup><span 
+class="cmmi-8">i</span></sup> <span 
+class="cmsy-10x-x-120">&#x2261;</span> dout<sub>
+<span 
+class="cmmi-8">a</span></sub><sup><span 
+class="cmmi-8">i</span></sup>, we need to compute
+                                                                                            
+                                                                                            
+<table 
+class="align">
+    <tr><td 
+class="align-odd"><span 
+class="cmmi-12">dx</span><sub><span 
+class="cmmi-8">a</span></sub><sup><span 
+class="cmmi-8">i</span></sup></td>    <td 
+class="align-even"> = <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">b,j</span></sub><span 
+class="cmmi-12">D</span><sub><span 
+class="cmmi-8">b</span></sub><sup><span 
+class="cmmi-8">j</span></sup><img 
+src="Images/testing_Latex2Html5x.png" alt="    j
+&#x2202;outb-
+ &#x2202;xia"  class="frac" align="middle"> = <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">b,j</span></sub><span 
+class="cmmi-12">D</span><sub><span 
+class="cmmi-8">b</span></sub><sup><span 
+class="cmmi-8">j</span></sup><span 
+class="cmmi-12">&#x03B3;</span><sub>
+<span 
+class="cmmi-8">b</span></sub><img 
+src="Images/testing_Latex2Html6x.png" alt="   j
+&#x2202;x&#x02C6;b
+&#x2202;xia"  class="frac" align="middle"></td>                                            <td 
+class="align-label"></td>    <td 
+class="align-label">
+    </td></tr><tr><td 
+class="align-odd"></td>        <td 
+class="align-even"> = <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">b,j</span></sub><span 
+class="cmmi-12">D</span><sub><span 
+class="cmmi-8">b</span></sub><sup><span 
+class="cmmi-8">j</span></sup><span 
+class="cmmi-12">&#x03B3;</span><sub>
+<span 
+class="cmmi-8">b</span></sub><img 
+src="Images/testing_Latex2Html7x.png" alt="1--
+&#x03C3;b"  class="frac" align="middle"><span 
+class="cmmi-12">&#x03B4;</span><sub><span 
+class="cmmi-8">ab</span></sub><img 
+src="Images/testing_Latex2Html8x.png" alt="(                              (               ) )
+  &#x03B4;ij - 1-&#x2211;   &#x03B4;ik - x&#x02C6;j 1-&#x2211;  &#x02C6;xk   &#x03B4;ki - -1-&#x2211;  &#x03B4;pi
+        N            bN      b        N
+            k             k               p"  class="left" align="middle"></td>          <td 
+class="align-label"></td>    <td 
+class="align-label">
+    </td></tr><tr><td 
+class="align-odd"></td>        <td 
+class="align-even"> = <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">j</span></sub><span 
+class="cmmi-12">D</span><sub><span 
+class="cmmi-8">a</span></sub><sup><span 
+class="cmmi-8">j</span></sup><span 
+class="cmmi-12">&#x03B3;</span><sub>
+<span 
+class="cmmi-8">a</span></sub><img 
+src="Images/testing_Latex2Html9x.png" alt=" 1
+---
+&#x03C3;a"  class="frac" align="middle"><img 
+src="Images/testing_Latex2Html10x.png" alt="(                                )
+   ij    1 &#x2211;    ik    j 1 &#x2211;    k ki
+  &#x03B4;  - ---    &#x03B4;  - &#x02C6;xa ---   &#x02C6;xa&#x03B4;
+       N   k          N  k"  class="left" align="middle"></td>                             <td 
+class="align-label"></td>    <td 
+class="align-label">
+    </td></tr><tr><td 
+class="align-odd"></td>        <td 
+class="align-even"> = <img 
+src="Images/testing_Latex2Html11x.png" alt="&#x03B3;a-
+&#x03C3;a"  class="frac" align="middle"><img 
+src="Images/testing_Latex2Html12x.png" alt="(                                )
+          &#x2211;             &#x2211;
+ Dia - -1-    Dja - &#x02C6;xia 1--   Dja&#x02C6;xja
+       N   j          N   j"  class="left" align="middle"> = <img 
+src="Images/testing_Latex2Html13x.png" alt="&#x03B3;a-
+&#x03C3;a"  class="frac" align="middle"><img 
+src="Images/testing_Latex2Html14x.png" alt="(      &#x27E8;   &#x27E9;      &#x27E8;     &#x27E9; )
+ Dia -  Dja  - x&#x02C6;ia Dja&#x02C6;xja
+            j            j"  class="left" align="middle"><span 
+class="cmmi-12">,</span></td>        <td 
+class="align-label"><a 
+ id="x1-1003r3"></a>(1.3)    </td></tr></table>
+where <img 
+src="Images/testing_Latex2Html15x.png" alt="&#x27E8;&#x22C5;&#x27E9;"  class="left" align="middle"><sub><span 
+class="cmmi-8">j</span></sub> represents an average with respect to the <span 
+class="cmmi-12">j </span>index. The three terms on the second line come
+from the derivatives w.r.t <img 
+src="Images/testing_Latex2Html16x.png" alt="&#x02C6;x"  class="circ" >, <span 
+class="cmmi-12">&#x03BC; </span>and <span 
+class="cmmi-12">&#x03C3; </span>respectively.
+<!--l. 1--><p class="noindent" >
+   <h3 class="likesectionHead"><a 
+ id="x1-20001"></a>References</h3>
+<!--l. 1--><p class="noindent" >
+    
+</body></html> 
+
+                                                                                            
+
+
